@@ -1,0 +1,7 @@
+pyarrow>=20,<26
+websocket-client>=1.8,<2
+requests>=2.32,<3
+numpy>=2,<3
+scipy>=1.14,<2
+tzdata
+matplotlib==3.10.8

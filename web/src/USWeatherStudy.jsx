@@ -1,0 +1,7 @@
+import React,{useEffect,useState} from 'react';
+export default function USWeatherStudy(){
+ const [report,setReport]=useState(null);
+ useEffect(()=>{let active=true;fetch('/api/us/weather/replay').then(r=>r.ok?r.json():null).then(r=>{if(active)setReport(r)}).catch(()=>{});return()=>{active=false}},[]);
+ if(!report)return null;
+ return <section className="panel detail-panel"><h2>US weather profit test</h2><p>Archived GFS/NAM forecasts calibrated on prior CLI observations, tested against six later NYC market dates. Current fees are applied as a scenario; historical fill depth and forecast publication timing remain unverified.</p><details><summary>Archived forecast loss graph; $200/month was hypothetical</summary><img src="/api/us/weather/replay/chart" alt="US weather forecast backtest scenarios show ten-dollar trading losses, with subscription overhead and remaining open basis reported separately" style={{width:'100%',height:'auto'}}/></details><p className="notice">Both forecast variants exhausted the $10 trading-risk budget and preserved $40 cash. Improved temperature accuracy did not establish profitable trading. The market-only baseline made zero trades.</p><details><summary>Coverage and methodology</summary><p>{report.coverage.reduce((n,g)=>n+g.price_records,0)} usable price observations · {report.coverage.reduce((n,g)=>n+g.settlements,0)} verified contract payouts. Two dates had incomplete price ladders.</p><ul>{report.limitations.map(t=><li key={t}>{t}</li>)}</ul></details></section>
+}

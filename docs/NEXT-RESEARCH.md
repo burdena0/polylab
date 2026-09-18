@@ -1,0 +1,40 @@
+> Multiple-band update: [US-MULTIBAND-STUDY.md](US-MULTIBAND-STUDY.md). Historical multiple-band and single-band arms chose identical trades: -$9.32 / -$9.53 with half-cent slip; 312 audit checks. New forward root `data/us-multiband-forward/1789699215223439000`, worker PID 43140 / session 76197, verified waiting for September 18 04:00 UTC decision. Do not restart a live worker. 170 tests pass.
+
+> Latest update: see [US-PROFIT-RESEARCH-UPDATE.md](US-PROFIT-RESEARCH-UPDATE.md). Six public leaderboard accounts audited; near-settlement screen: 74 quotes, zero qualified, all missing required-side depth. Paired AWC/NWS feed v2 fixes legitimate empty rawMessage records; original stopped and preserved. 158 tests pass. Next: untouched-period multi-band US allocation and complete-day CLI observations.
+
+> Cost correction (September 17): No paid model/data subscription is configured for PolyLab. The inherited $200/month is a legacy hypothetical sensitivity, not an actual bill. Current profit excludes this deduction; fees and slippage remain. Frozen historical artifacts retain their original assumptions for reproducibility.
+
+# Next US profit research
+
+Current scope is Polymarket US only, public-data research and paper simulation. Optimize net dollars after costs, not win rate. No VPN, paid service, account creation, real order or extra deposit. Preserve the separate SupahTrade halt and experiments.
+
+Completed this research cycle:
+
+- Transfer study `data/us-transfer/1789692627926092500`: all 432 requests, 14,981 usable prices, 216 payouts, 30/36 complete station-dates. Displayed audited analysis `analysis-1789695065918496100`; original result `analysis-1789694929447632400` retained. Both have identical economics, 3,428 audit checks. See US-TRANSFER-STUDY.md.
+- Shared $50 study `data/us-portfolio/1789693764400920100/analysis-1789694958387478400`: Benter +$8.10 after trading fees, -$56.34 after subscription. Half-cent slip: -$3.66 trading, -$68.10 after subscription. No-forecast recalibration +$8.10 / -$4.925 trading. All closed; 767 allocation/accounting checks. See US-PORTFOLIO-STUDY.md.
+- The first multi-city runner hit a redundant station-key error before computing P&L. Version 2 adapters and execution-amendment-v2.json preserve the original files and change only that keyword compatibility, not strategy rules. Reproduction uses run_us_transfer_v2.py and run_us_portfolio_v2.py. Never silently modify the frozen originals.
+- The transfer collector (99260) finished. The initial analysis waiter (93341) ended on that adapter error and is no longer running. Both studies were subsequently run and audited successfully. Do not wait on or restart those handles.
+- Dashboard APIs require matching audited report hashes. The US Papers page and budget labels now use US data rather than archived international results. Graphs and desktop/mobile controls were inspected; 137 Python tests pass. Server is running at http://127.0.0.1:8788.
+
+What the results support:
+
+1. Do not promote the current probability-recalibration strategy. Shared-account returns turn negative with half-cent slippage and its gains depend on a few outcomes. Its zero-slip model estimates only about $0.61/day of entry edge; this estimate is unvalidated. The largest winner exceeds the entire net trading gain.
+2. San Francisco's separate +$18.30 (+$13.13 under half-cent slip) is a research lead, not an approved city filter. Selecting it now is selection on known outcomes. Test any city/time selection prospectively or on a newly registered untouched period. The four cities share the NYC test calendar, so this is not an independent temporal replication.
+3. Independent MOS forecasts still lose about the $10 risk budget in most cases. Temperature RMSE gains alone are insufficient. Keep the original NYC loss and all unsuccessful baselines.
+4. Structural weather baskets found no qualifying after-cost opportunities in their nine-date sample; see US-BASKET-STUDY.md. Do not loosen stale/asynchronous quote rules to manufacture arbitrage.
+
+Completed five-city common-time allocation at `data/us-allocation/1789695789406088400/analysis-1789696699711406700`: 270 histories, 270 payouts, 39/45 complete signal ladders, 2,802 audit checks. Expected-dollar allocation lost $9.32 ($9.53 under half-cent slip); equal allocation lost $3.49 ($1.11 under slip). All closed, zero subscription expense. This retrospective known-outcome test does not justify promotion or city cherry-picking. See US-ALLOCATION-RESEARCH.md. Tests total 142 passing. Collection handles 41149, 9707, 68233 and 66167 have finished; do not restart or wait on them.
+
+Next concrete work:
+
+1. Verify the existing frozen `data/us-paper-v1` worker's current runtime and ledger. Last restart preserved zero trades and $50 per account; it resumed normally. Preserve its registration, 24-hour stop time, source/code hashes, watchlist and five-second gate. Do not replay old entry opportunities or silently extend it.
+2. Register a new prospective US data study of official CLI publication/observation information versus market repricing, across all available US weather stations rather than cherry-picking SFO. First verify exact contract prose, station, fixed-standard-time day and correction/review rules. Record real local receipt times; do not backfill past availability from later archives. Treat METAR as a covariate, not the contractual CLI settlement source. Prioritize informational effects that can survive the public feed's caching rather than millisecond latency claims.
+3. The completed Los Angeles depth probe `data/us-forward-depth/1789692904970493000` had a model-dependent $0.215 expected-value candidate but failed both timing classifications; no position or profit. The separately tested `polylab/us_http_age.py` now includes Date, Age, transport delay and residence time. Its diagnostic on those original receipts found 55.05s and 58.04s maximum ladder response ages, with three missing Age headers. Register a new protocol before using different qualification rules; this helper does not establish executable quotes.
+4. A future forward strategy requires a new account root, frozen model, common baseline, delayed observations, observed depth caps, whole quantities, fees, shared $50 capital/$40 reserve/$5 entry cap and zero configured subscription expense. Keep existing experiments immutable. No new forward-profit claim follows from current historical results.
+5. Expand actual US strategy coverage only where exact settlement relationships, causal data availability and realistic cost capacity are supported. Public US streaming requires authentication; no credential bypass or account creation. The existing four-signal local-agent comparison is inconclusive and does not justify another LLM in the trade path. Preserve it and require new held-out opportunities for any later agent comparison.
+
+The improve-polylab daily 10:00 local heartbeat already exists. Avoid duplicate scheduling and overlapping work. International workers and accounts remain archived. The broad goal is still active; no profitable US deployment has been established.
+
+The five-city dashboard was built and verified at 1440px and 390px. Both slippage controls, all ledger totals and chart loading passed; no page errors or horizontal overflow. Existing frozen US forward paper worker remains running with zero trades. No server restart or frozen paper mutation occurred during this cycle.
+
+Prospective CLI study is now implemented and running: `data/us-cli-edge/1789697178863031400`, process 42824 / exec session 57120 (verify live before restart). Initial audit `audit-1789697419837335000`: 197 checks, all five cities, 15 unique CLI versions, 14 quotes; all lacked the required side, zero qualified quotes/positions. 148 tests pass. Stop September 19 16:00 UTC, 500 MB cap. See US-CLI-EDGE.md. Next action is to audit new passes and inspect actual report-to-price changes, then test faster station observations as covariates; do not repeat already-completed allocation tests or loosen frozen gates.

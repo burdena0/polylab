@@ -1,0 +1,5 @@
+# PolyLab design system
+
+Reference: concept.png. White canvas, charcoal sidebar (#202930), teal action (#008f83), navy text (#101b2c), slate secondary text (#586a83), subtle border (#e0e6ee). 220px sidebar, 28px main gutters, 10px panel radius. System sans typography, 34px main title, 21px panel headings, 14px controls and body, 12px caption. Components: app navigation, metric strip, line chart, agent review panel, sortable/searchable strategy table, provenance row, details dialog. Primary content uses open whitespace and a single level of panel framing.
+
+The user subsequently requested PDF methods, a real LLM comparison, faster local model and paper trading. Extend the reference with tabs for those views using the same tokens and components. All plotted values and coverage counts come from saved runs. Remove the design-preview label and illustrative values. Show the actual local model name. Keep zero trades distinct from a blocked strategy, realized P&L distinct from inventory marks, and prototype data distinct from verified outcomes.
